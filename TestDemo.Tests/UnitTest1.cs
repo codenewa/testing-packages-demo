@@ -94,18 +94,19 @@ namespace TestDemo.Tests
             category.Received().Add(location);
         }
 
-        [Theory, AutoNSubstituteData]
-        public void CategoryApp_adds_location_to_category_using_autoMocking(
-            [Frozen] IRepository<Category> categoryRepo,
-            [Frozen] IRepository<Location> locationRepo, CategoryApp app)
-        {
-            categoryRepo.Get(0).ReturnsForAnyArgs(new Category());
-            locationRepo.Get(0).ReturnsForAnyArgs(new Location());
+        //TODO: Investigate
+        //[Theory, AutoNSubstituteData]
+        //public void CategoryApp_adds_location_to_category_using_autoMocking(
+        //    [Frozen] IRepository<Category> categoryRepo,
+        //    [Frozen] IRepository<Location> locationRepo, CategoryApp app)
+        //{
+        //    categoryRepo.Get(0).ReturnsForAnyArgs(new Category());
+        //    locationRepo.Get(0).ReturnsForAnyArgs(new Location());
 
-            var actual = app.AddLocation(0, 0);
+        //    var actual = app.AddLocation(0, 0);
 
 
-        }
+        //}
 
         [Fact]
         public void DoSomthing_return_0_for_null()
